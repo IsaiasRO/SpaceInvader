@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject Alien;
 
 	void Awake(){
-		for (int i = -5; i < 5; i++) 
-		{
-			Instantiate	(Alien,new Vector2 (i,0),Quaternion.identity);	
+		for (int y = 4; y>0; y--) {
+
+			for (int x = -5; x < 5; x++) {
+				Instantiate	(Alien, new Vector2 (x, y), Quaternion.identity);	
+			}
 		}
 	}
 
