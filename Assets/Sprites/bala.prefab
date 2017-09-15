@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4030484445193638}
   - component: {fileID: 212112860874458126}
   - component: {fileID: 61839400127521636}
-  - component: {fileID: 50928554291080966}
   - component: {fileID: 114628257892713476}
   m_Layer: 0
   m_Name: bala
@@ -43,26 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50928554291080966
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645215655212472}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &61839400127521636
 BoxCollider2D:
   m_ObjectHideFlags: 1
