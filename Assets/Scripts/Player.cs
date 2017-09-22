@@ -7,11 +7,12 @@ public class Player : MonoBehaviour {
 	[SerializeField]GameObject bullet;
 
 	void Start () {
-		
+		StartCoroutine (cool ());
 	}
 	
 
 	void Update () {
+		
 		if (Input.GetKey (KeyCode.A) && transform.position.x >-10)
 		{
 			transform.Translate (Vector2.left * Time.deltaTime * speed);
@@ -23,6 +24,11 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			Instantiate (bullet, transform.position, Quaternion.identity);	
+			StartCoroutine (cool ());
 		}
+
+	}
+	IEnumerator cool (){
+		yield return new WaitForSeconds (3f);
 	}
 }
