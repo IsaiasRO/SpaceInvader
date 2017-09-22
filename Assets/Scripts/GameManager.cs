@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	private GameManager GM;
 	[SerializeField] GameObject Alien;
+
 
 	void Awake(){
 		for (int y = 4; y>0; y--) {
@@ -20,7 +22,5 @@ public class GameManager : MonoBehaviour {
 	}
 	
 
-	void Update () {
-		
-	}
+
 }

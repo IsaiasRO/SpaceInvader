@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	private int speed = 5;
 	[SerializeField]GameObject bullet;
+	bool colshoot = true;
 
 	void Start () {
-		StartCoroutine (cool ());
+		
 	}
 	
 
@@ -21,14 +22,16 @@ public class Player : MonoBehaviour {
 		{
 			transform.Translate (Vector2.right * Time.deltaTime * speed);
 		}
-		if (Input.GetKeyDown (KeyCode.Space)) 
+		if (Input.GetKeyDown (KeyCode.Space)&& colshoot) 
 		{
-			Instantiate (bullet, transform.position, Quaternion.identity);	
-			StartCoroutine (cool ());
+			Instantiate (bullet, transform.position, Quaternion.identity);
+			colshoot = false;
+			Invoke ("cooldown",0.5f);
 		}
 
 	}
-	IEnumerator cool (){
-		yield return new WaitForSeconds (3f);
+	void cooldown(){
+		colshoot = true;
 	}
+
 }

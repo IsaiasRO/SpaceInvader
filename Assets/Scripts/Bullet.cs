@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 	private float speed = 5;
+	private Transform bullet;
+	[SerializeField] UIManager uimanager;
 
 	void Start () {
-		//Rigidbody2D rb = GetComponent<Rigidbody2D>();
-		//rb.velocity  = new Vector2 (0, 1) * speed;
+		
+		bullet = GetComponent <Transform> ();
 	}
 	
 
 	void Update () {
+		uimanager = GameObject.FindObjectOfType<UIManager>();
 		transform.Translate (Vector3.up * speed * Time.deltaTime);
+		if(bullet.position.y >10){
+			Destroy (gameObject);
+		}
+
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag == "Enemy") {
+			Destroy (other.gameObject);
+			uimanager.UpdateCounter ();
+			Destroy (gameObject);
+		}
 	}
 }
